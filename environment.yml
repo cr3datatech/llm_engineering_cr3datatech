@@ -10,7 +10,7 @@ dependencies:
   - numpy
   - pandas
   - scipy
-  - pytorch
+  #- pytorch
   - jupyterlab
   - ipywidgets
   - matplotlib
