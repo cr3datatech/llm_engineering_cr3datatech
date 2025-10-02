@@ -13,9 +13,11 @@ I use a platform called Anaconda to set up your environment. It's a powerful too
 
 Having said that: if you have any problems with Anaconda, I've provided an alternative approach. It's faster and simpler and should have you running quickly, with less of a guarantee around compatibility.
 
-### Before we begin - Heads up!
-
 If you are relatively new to using the Command Prompt, here is an excellent [guide](https://chatgpt.com/share/67b0acea-ba38-8012-9c34-7a2541052665) with instructions and exercises. I'd suggest you work through this first to build some confidence.
+
+## HEAD'S UP - "GOTCHA" ISSUES ON A PC: The following 4 Windows issues will need your attention, particularly #3 and #4
+
+Please do take a look at these issues. Issue #3 (Windows 260 character limit) will cause an issue with an "Archive Error" installing pytorch if unaddressed. Issue #4 will cause an installation issue.
 
 There are 4 common gotchas to developing on Windows to be aware of:   
 
@@ -31,7 +33,8 @@ This gets you a local copy of the code on your box.
 1. **Install Git** (if not already installed):
 
 - Download Git from https://git-scm.com/download/win
-- Run the installer and follow the prompts, using default options (press OK lots of times!)
+- Run the installer and follow the prompts, using default options (press OK lots of times!). 
+- After the installation, you may need to open a new Powershell window to use it (or you might even need to restart)
 
 2. **Open Command Prompt:**
 
@@ -71,7 +74,8 @@ If this Part 2 gives you any problems, there is an alternative Part 2B below tha
 - Open **Anaconda Prompt** (search for it in the Start menu)
 - Navigate to the "project root directory" by entering something like `cd C:\Users\YourUsername\Documents\Projects\llm_engineering` using the actual path to your llm_engineering project root directory. Do a `dir` and check you can see subdirectories for each week of the course.
 - Create the environment: `conda env create -f environment.yml`
-- Wait for a few minutes for all packages to be installed - in some cases, this can literally take 20-30 minutes if you've not used Anaconda before, and even longer depending on your internet connection. Important stuff is happening! If this runs for more than 1 hour 15 mins, or gives you other problems, please go to Part 2B instead.
+- **If you get an ArchiveError issue, then this is caused by the Windows 260 character limit - see gotcha number 3 at the top**
+- Wait for a few minutes for all packages to be installed - in some cases, this can literally take 30 minutes if you've not used Anaconda before, and even longer depending on your internet connection. Important stuff is happening! If this runs for more than 1 hour 15 mins, or gives you other problems, please go to Part 2B instead.  
 - You have now built an isolated, dedicated AI environment for engineering LLMs, running vector datastores, and so much more! You now need to **activate** it using this command: `conda activate llms`  
 
 You should see `(llms)` in your prompt, which indicates you've activated your new environment.
@@ -90,7 +94,7 @@ Press Win + R, type `cmd`, and press Enter
 
 Run `python --version` to find out which python you're on.  
 Ideally you'd be using a version of Python 3.11, so we're completely in sync.  
-I believe Python 3.12 works also, but (as of Feb 2025) Python 3.13 does **not** yet work as several Data Science dependencies are not yet ready for Python 3.13.  
+I believe Python 3.12 works also, but (as of June 2025) Python 3.13 does **not** yet work as several Data Science dependencies are not yet ready for Python 3.13.  
 If you need to install Python or install another version, you can download it here:  
 https://www.python.org/downloads/
 
